@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace ToursApp
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -30,7 +30,7 @@ namespace WpfApp1
         {
             Manager.MainFrame.GoBack();
         }
-        
+
         private void MainFrame_ContentRendered(object sender, EventArgs e)
         {
             if (MainFrame.CanGoBack)

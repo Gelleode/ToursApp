@@ -1,4 +1,4 @@
-﻿<Window x:Class="WpfApp1.MainWindow"
+﻿<Window x:Class="ToursApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -10,10 +10,11 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="200*"/>
-            <RowDefinition Height="200*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
         <Image Source="Resources/lizard.png" HorizontalAlignment="Left" Margin="0,0,0,50" Width="50"/>
-        <Frame NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered" Grid.Row="0" Name="MainFrame"></Frame>
-        <Button Content="Back" Name ="BtnBack" Width="170" Height="30" Grid.Row="0" HorizontalAlignment="Right" Margin="5" Click="BtnBackClick"/>
+        <Frame NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered" Grid.Row="1" Name="MainFrame"></Frame>
+        <Button Content="Back" Name ="BtnBack" Grid.Row="0" HorizontalAlignment="Right" Margin="0,35,5,35" Click="BtnBackClick" FontSize="14" BorderBrush="#FFFF0303" Background="Black" Foreground="White"/>
     </Grid>
 </Window>

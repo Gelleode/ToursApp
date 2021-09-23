@@ -13,20 +13,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace ToursApp
 {
     /// <summary>
-    /// Логика взаимодействия для HotelsPage.xaml
+    /// Логика взаимодействия для AddEditPage.xaml
     /// </summary>
-    public partial class HotelsPage : Page
+    public partial class AddEditPage : Page
     {
-        public HotelsPage()
+        public AddEditPage()
         {
             InitializeComponent();
+            ComboCountries.ItemsSource = ToursBaseEntities.GetContext().Country.ToList();
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new AddEditPage());
+
         }
     }
 }

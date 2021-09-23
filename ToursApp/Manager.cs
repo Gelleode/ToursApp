@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace WpfApp1
+namespace ToursApp
 {
     class Manager
     {
