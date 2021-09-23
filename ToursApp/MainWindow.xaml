@@ -13,6 +13,7 @@
             <RowDefinition Height="40*"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Header" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>
         <Image Source="Resources/lizard.png" HorizontalAlignment="Left" Margin="0,0,0,50" Width="50"/>
         <Frame NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered" Grid.Row="1" Name="MainFrame"></Frame>
         <Button Content="Back" Name ="BtnBack" Grid.Row="0" HorizontalAlignment="Right" Margin="0,35,5,35" Click="BtnBackClick" FontSize="14" BorderBrush="#FFFF0303" Background="Black" Foreground="White"/>
