@@ -51,7 +51,7 @@ namespace ToursApp
                 errors.AppendLine("Выберите страну");
             }
 
-            if (errors.Length < 0)
+            if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString());
                 return;

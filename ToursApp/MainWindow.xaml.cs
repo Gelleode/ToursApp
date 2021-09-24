@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,33 @@ namespace ToursApp
             InitializeComponent();
             MainFrame.Navigate(new HotelsPage());
             Manager.MainFrame = MainFrame;
+            ImportTours();
         }
+
+        private void ImportTours()
+        {
+            var fileData = File.ReadAllLines(@"Z:\2021_2022 учебный год\21ИС\WS\Solntsev\Подготовка(Учёба)\Урок_№3_Импорт\Tours.txt");
+            var images = Directory.GetFiles(@"Z:\2021_2022 учебный год\21ИС\WS\Solntsev\Подготовка(Учёба)\Урок_№3_Импорт\Tours_Photo");
+
+            foreach (var line in fileData)
+            {
+                var data = line.Split('\t');
+                var tempTour = new Tour
+                {
+                    Name = data[0].Replace("\"", ""),
+                    TicketCount = int.Parse(data[2]),
+                    Price = decimal.Parse(data[3]),
+                    IsActual = (data[4] == "0") ? false : true
+                };
+
+                foreach (var tourType in data[5].Split(new string[] { ","}, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    var currentType = ToursBaseEntities.GetContext().Type.ToList().FirstOrDefault(p => p.Name == tourType);
+
+                }
+            }
+        }
+        
         private void BtnBackClick(object sender, RoutedEventArgs e)
         {
             Manager.MainFrame.GoBack();
