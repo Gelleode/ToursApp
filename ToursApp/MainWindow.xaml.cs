@@ -31,14 +31,14 @@ namespace ToursApp
 
         private void ImportTours()
         {
-            /* IN COLLEGE USE THIS
+            // IN COLLEGE USE THIS
             var fileData = File.ReadAllLines(@"Z:\2021_2022 учебный год\21ИС\WS\Solntsev\Подготовка(Учёба)\Урок_№3_Импорт\Tours.txt");
             var images = Directory.GetFiles(@"Z:\2021_2022 учебный год\21ИС\WS\Solntsev\Подготовка(Учёба)\Урок_№3_Импорт\Tours_Photo");
-            */
-
-            var fileData = File.ReadAllLines(@"C:\Users\danil\Desktop\Fast Check\WSR\Урок_№3_Импорт\Tours.txt");
-            var images = Directory.GetFiles(@"C:\Users\danil\Desktop\Fast Check\WSR\Урок_№3_Импорт\Tours_Photo");
-
+            
+            // AT HOME USE THIS
+            //var fileData = File.ReadAllLines(@"C:\Users\danil\Desktop\Fast Check\WSR\Урок_№3_Импорт\Tours.txt");
+            //var images = Directory.GetFiles(@"C:\Users\danil\Desktop\Fast Check\WSR\Урок_№3_Импорт\Tours_Photo");
+            
             foreach (var line in fileData)
             {
                 var data = line.Split('\t');
@@ -50,7 +50,7 @@ namespace ToursApp
                     IsActual = (data[4] == "0") ? false : true
                 };
 
-                foreach (var tourType in data[5].Replace("\"","").Split(new string[] { ", "}, StringSplitOptions.RemoveEmptyEntries))
+                foreach (var tourType in data[5].Split(new string[] { ", "}, StringSplitOptions.RemoveEmptyEntries))
                 {
                     var currentType = ToursBaseEntities.GetContext().Type.ToList().FirstOrDefault(p => p.Name == tourType);
                     if (currentType != null)
