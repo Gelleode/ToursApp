@@ -24,7 +24,7 @@ namespace ToursApp
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new HotelsPage());
+            MainFrame.Navigate(new ToursPage());
             Manager.MainFrame = MainFrame;
             // ImportTours(); 
         }
@@ -67,7 +67,7 @@ namespace ToursApp
                 {
                     Console.WriteLine(ex.Message);
                 }
-
+                
                 ToursBaseEntities.GetContext().Tour.Add(tempTour);
                 ToursBaseEntities.GetContext().SaveChanges();
             }
